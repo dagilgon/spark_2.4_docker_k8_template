@@ -1,7 +1,7 @@
 # Spark_2.4_docker_k8_template
 template for spark 2.4 app running localy or remotely over spark cluster on docker or kubernetes
 
-Run localy
+# Run localy
 
 ```
 sbt assembly
@@ -9,18 +9,18 @@ sbt assembly
 ```
 
 
-Run remote over docker or kubernetes
+# Run remote over docker or kubernetes
 
---Deploy cluster with docker-compose 
+* Deploy cluster with docker-compose 
 
 ```
 docker-compose -f ./deploy/docker-compose.yml up
 ```
 
---or kubectl
+* or kubectl
 
 
-run remotely (edit remote ips in submit.sh)
+* compile and execute remotely (edit remote ips in submit.sh)
 
 ```
 sbt assembly
