@@ -8,7 +8,7 @@ using images from https://github.com/big-data-europe/docker-spark
 
 ```
 sbt assembly
-~/spark-2.4.4-bin-hadoop2.7/bin/spark-submit  --class es.iti.streaming2neo.App  --master spark://127.0.0.1:7077  --packages neo4j-contrib:neo4j-spark-connector:2.4.0-M6,graphframes:graphframes:0.7.0-spark2.4-s_2.11  ./target/scala-2.11/spark-assembly-0.0.1.jar
+~/spark-2.4.4-bin-hadoop2.7/bin/spark-submit  --class es.iti.spark.App  --master spark://127.0.0.1:7077  --packages neo4j-contrib:neo4j-spark-connector:2.4.0-M6,graphframes:graphframes:0.7.0-spark2.4-s_2.11  ./target/scala-2.11/spark-assembly-0.0.1.jar
 ```
 
 
