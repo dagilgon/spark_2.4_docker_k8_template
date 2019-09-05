@@ -28,7 +28,7 @@ https://github.com/big-data-europe/docker-spark
 
 ```
 sbt assembly
-docker build -t tag
+docker build -t tag .
 docker run -it tag
 ```
 
