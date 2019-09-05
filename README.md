@@ -28,8 +28,8 @@ https://github.com/big-data-europe/docker-spark
 
 ```
 sbt assembly
-docker build -t streaming2neo
-docker run -it streaming2neo
+docker build -t tag
+docker run -it tag
 ```
 
 
