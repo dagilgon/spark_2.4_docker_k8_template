@@ -1,5 +1,8 @@
 # Spark_2.4_docker_k8_template
-template for spark 2.4 app running localy or remotely over spark cluster on docker or kubernetes (scala and sbt)
+
+Template for spark 2.4 app running localy or remotely over spark cluster on docker or kubernetes (scala and sbt)
+
+using images from https://github.com/big-data-europe/docker-spark
 
 # Run localy
 
@@ -19,6 +22,7 @@ docker-compose -f ./deploy/docker-compose.yml up
 
 * or kubectl
 
+https://github.com/big-data-europe/docker-spark
 
 * compile and execute remotely (edit remote ips in submit.sh)
 
