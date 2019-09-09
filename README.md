@@ -14,15 +14,26 @@ sbt assembly
 
 # Run remote over docker or kubernetes
 
-* Deploy cluster with docker-compose 
+* Deploy cluster with docker-compose (client must be on docker-compose.yml, outside did't work)
 
 ```
 docker-compose -f ./deploy/docker-compose.yml up
 ```
 
-* or kubectl
+* or kubectl (Google Cloud, gcp)
 
-https://github.com/big-data-europe/docker-spark
+based on https://github.com/big-data-europe/docker-spark
+
+```
+gcloud container clusters get-credentials standard-cluster-1 --zone us-central1-a --project proyect_name_gcp
+kubectl create -f ./deploy/k8s-spark-cluster.yaml
+gcloud auth configure-docker
+sbt assembly
+docker build -it tag .
+docker tag tag gcr.io/proyect_name_gcp/tag:latest
+docker push gcr.io/proyect_name_gcp/tag:latest
+kubectl run base --rm -it --labels="app=spark-client" --image gcr.io/proyect_name_gcp/tag:latest -- bash /spark/bin/spark-submit --class es.iti.spark.App --master spark://spark-master:7077 --deploy-mode client --conf spark.driver.host=spark-client spark-assembly-0.0.1.jar
+```
 
 * compile and execute remotely (edit remote ips in submit.sh)
 
